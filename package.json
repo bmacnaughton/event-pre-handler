@@ -1,0 +1,20 @@
+{
+  "name": "event-unshift",
+  "version": "1.0.0",
+  "description": "Add event listeners before existing listeners",
+  "author": "Stephen Belanger <admin@stephenbelanger.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "bench": "node test.js --bench"
+  },
+  "homepage": "https://github.com/Qard/event-unshift#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Qard/event-unshift.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Qard/event-unshift/issues"
+  }
+}
