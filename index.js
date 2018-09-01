@@ -1,7 +1,9 @@
+'use strict'
+
 var slice = Array.prototype.slice
 
 function preEmit (type) {
-  var list = this._uev_events[type]
+  var list = this._eph_events[type]
   if (list) {
     var args = slice.call(arguments, 1)
     for (var i = 0; i < list.length; i++) {
@@ -9,26 +11,21 @@ function preEmit (type) {
     }
   }
 
-  return this._uev_emit.apply(this, arguments)
+  return this._eph_emit.apply(this, arguments)
 }
 
 function patch (emitter) {
-  if ( ! emitter._uev_events) {
-    emitter._uev_events = {}
-    emitter._uev_emit = emitter.emit
-    emitter.unshift = unshift
+  if (!emitter._eph_events) {
+    emitter._eph_events = {}
+    emitter._eph_emit = emitter.emit
+    emitter._preHandle = preHandle
     emitter.emit = preEmit
   }
 }
 
-function unshift (type, handler) {
-  this._uev_events[type] = this._uev_events[type] || []
-  this._uev_events[type].unshift(handler)
-}
-
-patch.unshift = function (emitter, type, handler) {
-  patch(emitter)
-  emitter.unshift(type, handler)
+function preHandle (type, handler) {
+  this._eph_events[type] = this._eph_events[type] || []
+  this._eph_events[type].unshift(handler)
 }
 
 module.exports = patch

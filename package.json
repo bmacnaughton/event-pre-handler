@@ -1,20 +1,23 @@
 {
-  "name": "event-unshift",
+  "name": "event-pre-handler",
   "version": "1.0.0",
   "description": "Add event listeners before existing listeners",
   "author": "Stephen Belanger <admin@stephenbelanger.com>",
+  "contributors": [
+    "Bruce A. MacNaughton <bmacnaughton@gmail.com>"
+  ],
   "license": "MIT",
   "main": "index.js",
   "scripts": {
     "test": "node test.js",
     "bench": "node test.js --bench"
   },
-  "homepage": "https://github.com/Qard/event-unshift#readme",
+  "homepage": "https://github.com/bmacnaughton/event-pre-handler#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Qard/event-unshift.git"
+    "url": "git+https://github.com/bmacnaughton/event-pre-handler.git"
   },
   "bugs": {
-    "url": "https://github.com/Qard/event-unshift/issues"
+    "url": "https://github.com/bmacnaughton/event-pre-handler/issues"
   }
 }

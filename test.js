@@ -13,12 +13,12 @@ function test (done) {
     if (done) done()
   })
 
-  ev.unshift('test', function () {
+  ev._preHandle('test', function () {
     assert(count === 1)
     count++
   })
 
-  ev.unshift('test', function () {
+  ev._preHandle('test', function () {
     count++
   })
 
