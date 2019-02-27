@@ -5,7 +5,11 @@ var patch = require('./')
 function test (done) {
   var ev = new Emitter
   var count = 0
-  patch(ev)
+  const rev = patch(ev)
+  assert(rev === ev)
+
+  const x = patch(null)
+  assert(x === null)
 
   ev.on('test', function () {
     assert(count === 2)
