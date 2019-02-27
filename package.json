@@ -1,6 +1,6 @@
 {
   "name": "event-pre-handler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Add event listeners before existing listeners",
   "author": "Stephen Belanger <admin@stephenbelanger.com>",
   "contributors": [
