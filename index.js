@@ -15,12 +15,13 @@ function preEmit (type) {
 }
 
 function patch (emitter) {
-  if (!emitter._eph_events) {
+  if (emitter && !emitter._eph_events) {
     emitter._eph_events = {}
     emitter._eph_emit = emitter.emit
     emitter._preHandle = preHandle
     emitter.emit = preEmit
   }
+  return emitter
 }
 
 function preHandle (type, handler) {
